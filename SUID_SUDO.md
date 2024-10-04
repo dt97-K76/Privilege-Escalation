@@ -29,3 +29,11 @@ SUID permission cho phép người dùng thực thi tệp tin đó với quyền
 hoặc
 
     find / -perm /4000 -type f 2>/dev/null
+
+### Sudoers file
+Khái niệm: sudoers file là tệp lưu trữ người dùng và nhóm có quyền root để chạy một số hoặc tất cả các lệnh với quyền root hoặc người dùng khác.
+
+![image](https://github.com/user-attachments/assets/685d8b15-8c02-4648-9004-48ba5bc4ecb0)
+
+
+
