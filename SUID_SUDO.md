@@ -35,5 +35,17 @@ Khái niệm: sudoers file là tệp lưu trữ người dùng và nhóm có quy
 
 ![image](https://github.com/user-attachments/assets/685d8b15-8c02-4648-9004-48ba5bc4ecb0)
 
+Để chỉnh sửa ta dùng lệnh `visudo`.
+
+Ví dụ: root ALL=(ALL:ALL) ALL
+
+- root: tên người dùng
+- ALL(1): host (terminal)
+- (ALL:ALL): run as (user:group)
+- ALL: câu lệnh thực thi
+
+Chạy lệnh: `sudo -l` để kiểm tra quyền sudo của người dùng hiện tại:
+- Nếu `user ALL=ALL` or `user ALL=(root) ALL` thì dùng lệnh `sudo su` hoặc `sudo bash` để chuyển đặc quyền sang **root**.
+- Nếu user chỉ được set chạy có tệp thực thi với quyền root như sau `user ALL=(root) NOPASSWD: /usr/bin/find` thì sử dụng `sudo find /home -exec /bin/bash \;` để nâng cao đặc quyền.
 
 
